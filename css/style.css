@@ -535,34 +535,96 @@ button:focus-visible,
   overflow: hidden;
   height: 100%;
   box-shadow: var(--amigo-shadow);
-  transition: var(--amigo-transition);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: productCardIn 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   box-shadow: var(--amigo-shadow-hover);
 }
 
+/* Staggered entrance so cards pop in one after another instead of all at once */
+@keyframes productCardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#productGrid > div:nth-child(1) .product-card { animation-delay: 0.02s; }
+#productGrid > div:nth-child(2) .product-card { animation-delay: 0.08s; }
+#productGrid > div:nth-child(3) .product-card { animation-delay: 0.14s; }
+#productGrid > div:nth-child(4) .product-card { animation-delay: 0.2s; }
+#productGrid > div:nth-child(5) .product-card { animation-delay: 0.26s; }
+#productGrid > div:nth-child(6) .product-card { animation-delay: 0.32s; }
+#productGrid > div:nth-child(7) .product-card { animation-delay: 0.38s; }
+#productGrid > div:nth-child(8) .product-card { animation-delay: 0.44s; }
+#productGrid > div:nth-child(n+9) .product-card { animation-delay: 0.48s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .product-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* Studio-style product tile: soft light backdrop like a product-photography
+   shoot, image floats centered instead of a hard edge-to-edge crop. */
 .product-img-wrap {
+  position: relative;
   overflow: hidden;
-  height: 200px;
+  height: 210px;
+  background: linear-gradient(145deg, #fbfbfb 0%, #eef0f2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
 }
 
 .product-img-wrap[role="button"] {
   cursor: pointer;
 }
 
+/* Diagonal light sweep that glides across the tile on hover */
+.product-img-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.55) 50%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.product-card:hover .product-img-wrap::before {
+  transform: translateX(120%);
+}
+
 .product-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
+  object-fit: contain;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.4s ease;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.12));
 }
 
 .product-card:hover .product-img {
-  transform: scale(1.08);
+  transform: scale(1.1) rotate(-1deg);
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.2));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-img,
+  .product-img-wrap::before {
+    transition: none;
+  }
 }
 
 .product-body {
@@ -1022,10 +1084,6 @@ button:focus-visible,
 }
 
 /* ============ STOCK BADGES ============ */
-.product-img-wrap {
-  position: relative;
-}
-
 .stock-badge {
   position: absolute;
   top: 12px;

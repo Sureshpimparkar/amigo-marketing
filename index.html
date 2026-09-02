@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amigo Marketing | Car & Bike Cleaning Materials in Pune</title>
+  <meta name="description" content="Amigo Marketing provides car and bike cleaning, washing and detailing materials in Kharadi, Pune, Maharashtra. Explore quality vehicle care products and contact us on WhatsApp.">
+  <meta name="keywords" content="car cleaning products Pune, bike cleaning materials Kharadi, car wash chemicals, detailing products, microfiber cloths, Amigo Marketing">
+  <meta name="author" content="Amigo Marketing">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Amigo Marketing | Car & Bike Cleaning Materials in Pune">
+  <meta property="og:description" content="Trusted car and bike cleaning, washing and detailing material provider in Kharadi, Pune, Maharashtra.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/hero-car.jpg">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Favicon (simple inline) -->
+  <link rel="icon" href="data:,">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============ HEADER / NAVBAR ============ -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-amigo" id="mainNavbar">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+          <img src="assets/images/logo.jpg" alt="Amigo Marketing logo" class="brand-logo">
+          <span><span class="brand-text">AMIGO</span><span class="brand-accent">MARKETING</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+          aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#why-us">Why Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item mt-2 mt-lg-0">
+              <button class="btn btn-cart-nav ms-lg-2" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#cartDrawer" aria-controls="cartDrawer" aria-label="Open cart">
+                <i class="bi bi-cart3"></i> Cart
+                <span class="cart-badge d-none" id="cartBadge">0</span>
+              </button>
+            </li>
+            <li class="nav-item mt-2 mt-lg-0">
+              <a class="btn btn-whatsapp-nav ms-lg-2" id="navWhatsappBtn" href="#" target="_blank" rel="noopener">
+                <i class="bi bi-whatsapp"></i> WhatsApp Us
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============ HERO BANNER SLIDER ============ -->
+  <section id="home" class="hero-section">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
+      data-bs-interval="4500" data-bs-pause="false" data-bs-touch="true" data-bs-wrap="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="hero-slide" style="background-image: url('assets/images/car-wash.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+              <div class="row">
+                <div class="col-lg-8">
+                  <span class="hero-badge">Pune's Trusted Vehicle Care Supplier</span>
+                  <h1 class="hero-heading">Complete Car Care Starts Here</h1>
+                  <p class="hero-subtitle">Premium car cleaning and washing materials for professional and everyday care.</p>
+                  <div class="hero-btn-group">
+                    <a href="#products" class="btn btn-hero-primary">Explore Products</a>
+                    <a href="#" id="heroWhatsapp1" class="btn btn-hero-secondary" target="_blank" rel="noopener">
+                      <i class="bi bi-whatsapp"></i> WhatsApp Us
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="hero-slide" style="background-image: url('assets/images/hero-bike.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+              <div class="row">
+                <div class="col-lg-8">
+                  <span class="hero-badge">Bike Cleaning Specialists</span>
+                  <h1 class="hero-heading">Everything Your Bike Needs</h1>
+                  <p class="hero-subtitle">Quality bike cleaning and care products for a spotless finish.</p>
+                  <div class="hero-btn-group">
+                    <a href="#products" class="btn btn-hero-primary">View Products</a>
+                    <a href="#" id="heroWhatsapp2" class="btn btn-hero-secondary" target="_blank" rel="noopener">
+                      <i class="bi bi-whatsapp"></i> WhatsApp Us
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="hero-slide" style="background-image: url('assets/images/hero-car.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+              <div class="row">
+                <div class="col-lg-8">
+                  <span class="hero-badge">Kharadi, Pune</span>
+                  <h1 class="hero-heading">Professional Cleaning. Better Results.</h1>
+                  <p class="hero-subtitle">Reliable car & bike cleaning materials available in Pune.</p>
+                  <div class="hero-btn-group">
+                    <a href="#contact" class="btn btn-hero-primary">Get in Touch</a>
+                    <a href="#" id="heroWhatsapp3" class="btn btn-hero-secondary" target="_blank" rel="noopener">
+                      <i class="bi bi-whatsapp"></i> WhatsApp Us
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section id="about" class="section-padding about-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 fade-in-section">
+          <div class="about-image-wrap">
+            <img src="assets/images/amigo-products.jpg" alt="Amigo Marketing car and bike cleaning products range" class="img-fluid rounded-4 about-img" loading="lazy">
+            <span class="about-badge">
+              <i class="bi bi-geo-alt-fill"></i> Serving Pune & Nearby Areas
+            </span>
+          </div>
+        </div>
+        <div class="col-lg-6 fade-in-section">
+          <span class="section-tag">About Us</span>
+          <h2 class="section-heading">About Amigo Marketing</h2>
+          <p class="section-text">
+            Amigo Marketing is a trusted car and bike cleaning material provider in Pune, Maharashtra.
+            We provide a wide range of cleaning, washing and vehicle care products suitable for car owners,
+            bike owners, professional washers and detailing businesses.
+          </p>
+          <ul class="about-highlights list-unstyled">
+            <li><i class="bi bi-check-circle-fill"></i> Quality Products</li>
+            <li><i class="bi bi-check-circle-fill"></i> Reliable Service</li>
+            <li><i class="bi bi-check-circle-fill"></i> Wide Product Range</li>
+            <li><i class="bi bi-check-circle-fill"></i> Customer Support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT CATEGORIES ============ -->
+  <section id="categories" class="section-padding categories-section">
+    <div class="container">
+      <div class="text-center mb-5 fade-in-section">
+        <span class="section-tag">What We Offer</span>
+        <h2 class="section-heading">Product Categories</h2>
+        <p class="section-text-center">Everything you need to keep your car and bike clean, protected and shining.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-6 col-md-4 col-lg-3 fade-in-section">
+          <div class="category-card" data-category="Car Cleaning" role="button" tabindex="0">
+            <div class="category-icon"><i class="bi bi-car-front-fill"></i></div>
+            <h3 class="category-title">Car Cleaning</h3>
+            <p class="category-desc">Car shampoo, cleaners, polish and washing products.</p>
+            <a href="#products" class="category-link">Explore <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 fade-in-section">
+          <div class="category-card" data-category="Bike Cleaning" role="button" tabindex="0">
+            <div class="category-icon"><i class="bi bi-bicycle"></i></div>
+            <h3 class="category-title">Bike Cleaning</h3>
+            <p class="category-desc">Bike wash and maintenance cleaning materials.</p>
+            <a href="#products" class="category-link">Explore <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 fade-in-section">
+          <div class="category-card" data-category="Car Detailing" role="button" tabindex="0">
+            <div class="category-icon"><i class="bi bi-stars"></i></div>
+            <h3 class="category-title">Detailing</h3>
+            <p class="category-desc">Professional detailing and finishing products.</p>
+            <a href="#products" class="category-link">Explore <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 fade-in-section">
+          <div class="category-card" data-category="Accessories" role="button" tabindex="0">
+            <div class="category-icon"><i class="bi bi-tools"></i></div>
+            <h3 class="category-title">Accessories</h3>
+            <p class="category-desc">Vehicle care accessories and add-ons.</p>
+            <a href="#products" class="category-link">Explore <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 fade-in-section">
+          <div class="category-card" data-category="Cleaning Chemicals" role="button" tabindex="0">
+            <div class="category-icon"><i class="bi bi-droplet-fill"></i></div>
+            <h3 class="category-title">Cleaning Chemicals</h3>
+            <p class="category-desc">Quality cleaning chemicals for automotive use.</p>
+            <a href="#products" class="category-link">Explore <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 fade-in-section">
+          <div class="category-card" data-category="Microfiber Products" role="button" tabindex="0">
+            <div class="category-icon"><i class="bi bi-square-fill"></i></div>
+            <h3 class="category-title">Microfiber Products</h3>
+            <p class="category-desc">Microfiber cloths and cleaning accessories.</p>
+            <a href="#products" class="category-link">Explore <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 fade-in-section">
+          <div class="category-card" data-category="Washing Accessories" role="button" tabindex="0">
+            <div class="category-icon"><i class="bi bi-brush-fill"></i></div>
+            <h3 class="category-title">Washing Accessories</h3>
+            <p class="category-desc">Brushes, sponges, bottles and other tools.</p>
+            <a href="#products" class="category-link">Explore <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 fade-in-section">
+          <div class="category-card" data-category="Polishing Products" role="button" tabindex="0">
+            <div class="category-icon"><i class="bi bi-shine"></i></div>
+            <h3 class="category-title">Polishing Products</h3>
+            <p class="category-desc">Polish and wax for a brilliant finish.</p>
+            <a href="#products" class="category-link">Explore <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED PRODUCTS ============ -->
+  <section id="products" class="section-padding products-section">
+    <div class="container">
+      <div class="text-center mb-4 fade-in-section">
+        <span class="section-tag">Featured</span>
+        <h2 class="section-heading">Our Products</h2>
+        <p class="section-text-center">Browse our range of vehicle care products available at Amigo Marketing.</p>
+      </div>
+      <!-- Filter pills -->
+      <div class="product-filters mb-4 text-center fade-in-section" id="productFilters">
+        <button class="filter-pill filter-active" data-category="All">All</button>
+      </div>
+      <!-- Product cards are rendered from js/store.js -->
+      <div class="row g-4" id="productGrid" aria-live="polite"></div>
+      <noscript>
+        <p class="text-center text-danger mt-4">
+          Please enable JavaScript to view products and place an order.
+          You can also reach us on WhatsApp or visit our store in Kharadi, Pune.
+        </p>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- ============ WHY CHOOSE US ============ -->
+  <section id="why-us" class="section-padding why-us-section">
+    <div class="container">
+      <div class="text-center mb-5 fade-in-section">
+        <span class="section-tag light">Our Advantage</span>
+        <h2 class="section-heading light">Why Choose Amigo Marketing?</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 fade-in-section">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-patch-check-fill"></i></div>
+            <h3 class="feature-title">Quality Products</h3>
+            <p class="feature-desc">Reliable products for effective vehicle cleaning and care.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-in-section">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-grid-3x3-gap-fill"></i></div>
+            <h3 class="feature-title">Wide Range</h3>
+            <p class="feature-desc">Car, bike, detailing and washing materials under one roof.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-in-section">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-headset"></i></div>
+            <h3 class="feature-title">Professional Support</h3>
+            <p class="feature-desc">Get help selecting the right cleaning products.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-in-section">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <h3 class="feature-title">Convenient Location</h3>
+            <p class="feature-desc">Easy to reach in Kharadi, Pune.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES / SOLUTIONS SECTION ============ -->
+  <section id="solutions" class="section-padding solutions-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-lg-2 fade-in-section">
+          <img src="assets/images/bike-wash.jpg" alt="Complete vehicle care and washing solutions" class="img-fluid rounded-4 solutions-img" loading="lazy">
+        </div>
+        <div class="col-lg-6 order-lg-1 fade-in-section">
+          <span class="section-tag">Our Solutions</span>
+          <h2 class="section-heading">Complete Vehicle Care Solutions</h2>
+          <div class="solutions-list">
+            <div class="solutions-item">
+              <i class="bi bi-check2-circle"></i>
+              <span>Car Washing Materials</span>
+            </div>
+            <div class="solutions-item">
+              <i class="bi bi-check2-circle"></i>
+              <span>Bike Washing Materials</span>
+            </div>
+            <div class="solutions-item">
+              <i class="bi bi-check2-circle"></i>
+              <span>Professional Detailing Products</span>
+            </div>
+            <div class="solutions-item">
+              <i class="bi bi-check2-circle"></i>
+              <span>Interior Cleaning Products</span>
+            </div>
+            <div class="solutions-item">
+              <i class="bi bi-check2-circle"></i>
+              <span>Exterior Cleaning Products</span>
+            </div>
+            <div class="solutions-item">
+              <i class="bi bi-check2-circle"></i>
+              <span>Polishing & Finishing Products</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA SECTION ============ -->
+  <section class="cta-section">
+    <div class="container text-center fade-in-section">
+      <h2 class="cta-heading">Looking for the Right Car or Bike Cleaning Products?</h2>
+      <p class="cta-subtitle">Talk to Amigo Marketing and find the right products for your vehicle care needs.</p>
+      <div class="cta-btn-group">
+        <a href="#" id="ctaWhatsappBtn" class="btn btn-hero-primary" target="_blank" rel="noopener">
+          <i class="bi bi-whatsapp"></i> WhatsApp Us
+        </a>
+        <a href="#" id="ctaDirectionsBtn" class="btn btn-hero-outline" target="_blank" rel="noopener">
+          <i class="bi bi-signpost-2-fill"></i> Get Directions
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GOOGLE MAP + CONTACT SECTION ============ -->
+  <section id="contact" class="section-padding contact-section">
+    <div class="container">
+      <div class="text-center mb-5 fade-in-section">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-heading">Visit or Contact Us</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6 fade-in-section">
+          <div class="contact-card">
+            <h3 class="contact-business-name">Amigo Marketing</h3>
+            <ul class="contact-details list-unstyled">
+              <li>
+                <i class="bi bi-geo-alt-fill"></i>
+                <div>
+                  <strong>Address</strong>
+                  <p>Pune Nagar Rd, near Satkar Hotel, Shree Ram Society, Chandan Nagar, Kharadi, Pune, Maharashtra 411014</p>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-pin-map-fill"></i>
+                <div>
+                  <strong>Location</strong>
+                  <p>Kharadi, Pune, Maharashtra</p>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-shop"></i>
+                <div>
+                  <strong>Business Type</strong>
+                  <p>Car & Bike Cleaning Material Provider</p>
+                </div>
+              </li>
+            </ul>
+            <div class="contact-btn-group">
+              <a href="#" id="contactWhatsappBtn" class="btn btn-whatsapp-solid" target="_blank" rel="noopener">
+                <i class="bi bi-whatsapp"></i> WhatsApp Us
+              </a>
+              <a href="#" id="contactDirectionsBtn" class="btn btn-outline-dark-amigo" target="_blank" rel="noopener">
+                <i class="bi bi-signpost-2-fill"></i> Get Directions
+              </a>
+              <a href="#" id="contactCallBtn" class="btn btn-outline-dark-amigo">
+                <i class="bi bi-telephone-fill"></i> Call Now
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 fade-in-section">
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps?q=Pune%20Nagar%20Rd,%20near%20Satkar%20Hotel,%20Shree%20Ram%20Society,%20Chandan%20Nagar,%20Kharadi,%20Pune,%20Maharashtra%20411014&output=embed"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Amigo Marketing location on Google Maps">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <img src="assets/images/logo.jpg" alt="Amigo Marketing logo" class="footer-logo" loading="lazy">
+          <h3 class="footer-brand">AMIGO<span>MARKETING</span></h3>
+          <p class="footer-text">Your trusted destination for car and bike cleaning materials in Pune.</p>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links list-unstyled">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-links list-unstyled">
+            <li><i class="bi bi-geo-alt-fill"></i> Pune, Maharashtra</li>
+            <li><i class="bi bi-pin-map-fill"></i> Kharadi</li>
+            <li><i class="bi bi-whatsapp"></i> WhatsApp</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-bottom">&copy; 2026 Amigo Marketing. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING WHATSAPP BUTTON ============ -->
+  <a href="#" id="floatingWhatsapp" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+    <span class="floating-whatsapp-text">Chat with us</span>
+  </a>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div class="offcanvas offcanvas-end cart-drawer" tabindex="-1" id="cartDrawer" aria-labelledby="cartDrawerLabel">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title h5" id="cartDrawerLabel"><i class="bi bi-cart3"></i> Your Cart</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close cart"></button>
+    </div>
+    <div class="offcanvas-body" id="cartBody"></div>
+    <div class="cart-drawer-footer" id="cartFooter"></div>
+  </div>
+
+  <!-- ============ PRODUCT DETAILS MODAL ============ -->
+  <div class="modal fade" id="productDetailModal" tabindex="-1" aria-labelledby="productDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content amigo-modal">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="productDetailModalLabel"><i class="bi bi-info-circle-fill"></i> Product Details</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="detail-img-wrap">
+                <img src="" alt="" class="img-fluid rounded-3 detail-img" id="detailImg">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <span class="section-tag" id="detailCategory"></span>
+              <h3 class="detail-name" id="detailName"></h3>
+              <p class="detail-desc" id="detailDesc"></p>
+              <p class="detail-price" id="detailPrice"></p>
+              <div id="detailQtyStepper" class="mb-3"></div>
+              <div id="detailActions"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CHECKOUT MODAL ============ -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content amigo-modal">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="checkoutModalLabel"><i class="bi bi-bag-check-fill"></i> Complete Your Order</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="checkoutForm" novalidate>
+          <div class="modal-body">
+            <h3 class="checkout-subheading">Order Summary</h3>
+            <div id="checkoutSummary" class="mb-4"></div>
+
+            <h3 class="checkout-subheading">Delivery Details</h3>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="custName" class="form-label">Full Name <span class="req">*</span></label>
+                <input type="text" class="form-control" id="custName" required autocomplete="name">
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="custPhone" class="form-label">Phone Number <span class="req">*</span></label>
+                <input type="tel" class="form-control" id="custPhone" required pattern="[0-9+\s-]{10,15}" autocomplete="tel">
+                <div class="invalid-feedback">Please enter a valid phone number.</div>
+              </div>
+              <div class="col-12">
+                <label for="custEmail" class="form-label">Email Address <span class="req">*</span></label>
+                <input type="email" class="form-control" id="custEmail" required autocomplete="email">
+                <div class="invalid-feedback">We need a valid email to send your payment QR.</div>
+              </div>
+              <div class="col-12">
+                <label for="custAddress" class="form-label">Delivery Address <span class="req">*</span></label>
+                <textarea class="form-control" id="custAddress" rows="2" required autocomplete="street-address"></textarea>
+                <div class="invalid-feedback">Please enter your delivery address.</div>
+              </div>
+              <div class="col-12">
+                <label for="custNotes" class="form-label">Notes <span class="text-muted">(optional)</span></label>
+                <textarea class="form-control" id="custNotes" rows="2"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark-amigo" data-bs-dismiss="modal">Back</button>
+            <button type="submit" class="btn btn-checkout" id="placeOrderBtn">
+              <i class="bi bi-bag-check-fill"></i> Place Order
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ORDER SUCCESS + PAYMENT QR MODAL ============ -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content amigo-modal">
+        <div class="modal-header border-0">
+          <h2 class="modal-title h5" id="successModalLabel">Order Received</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="success-icon"><i class="bi bi-check-lg"></i></div>
+          <h3 class="success-title">Thank you, <span id="successName"></span>!</h3>
+          <p class="success-order-id">Order ID: <strong id="successOrderId"></strong></p>
+
+          <p class="order-status" id="orderStatusMsg"></p>
+
+          <!-- Payment QR (hidden until UPI ID + prices are configured) -->
+          <div id="qrSection" class="qr-section d-none">
+            <h4 class="qr-heading">Scan to Pay</h4>
+            <div id="orderQrCode" class="qr-holder" aria-label="UPI payment QR code"></div>
+            <p class="qr-amount">Amount: <strong id="qrAmount"></strong></p>
+            <p class="qr-upi">UPI ID: <span id="qrUpiId"></span></p>
+            <a href="#" id="upiPayLink" class="btn btn-checkout btn-sm">
+              <i class="bi bi-phone"></i> Pay from this device
+            </a>
+            <p class="qr-hint">Scan with any UPI app (GPay, PhonePe, Paytm). Share the payment screenshot with us to confirm.</p>
+          </div>
+
+          <!-- Fallback when automatic email is not configured -->
+          <div id="orderFallback" class="order-fallback d-none">
+            <a href="#" id="fallbackMailBtn" class="btn btn-checkout btn-sm">
+              <i class="bi bi-envelope-fill"></i> Send by Email
+            </a>
+            <a href="#" id="fallbackWhatsappBtn" class="btn btn-whatsapp-solid btn-sm" target="_blank" rel="noopener">
+              <i class="bi bi-whatsapp"></i> Send on WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="modal-footer border-0 justify-content-center">
+          <button type="button" class="btn btn-outline-dark-amigo" data-bs-dismiss="modal">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TOAST HOLDER ============ -->
+  <div class="amigo-toast-holder" id="amigoToastHolder" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- QR code generator (for the UPI payment QR) -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <!-- EmailJS (sends the order + payment emails from the browser) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

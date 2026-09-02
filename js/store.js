@@ -15,6 +15,15 @@ let activeCategory = "All";
 
 const CART_STORAGE_KEY = "amigoCart";
 
+/**
+ * Real product photos (.jpg/.jpeg/.png) are full-bleed rectangular shots and
+ * need a "cover" crop. Icon-style .svg placeholders are floated/contained on
+ * a studio-gray tile instead. This flag lets the CSS treat each correctly.
+ */
+function isRealPhoto(imagePath) {
+  return /\.(jpe?g|png|webp)$/i.test(imagePath || "");
+}
+
 /* ============ CART PERSISTENCE ============ */
 
 function loadCart() {
@@ -230,8 +239,10 @@ function renderProducts() {
     return (
       '<div class="col-sm-6 col-lg-3">' +
         '<div class="product-card' + (outOfStock ? " product-card-disabled" : "") + '">' +
-          '<div class="product-img-wrap" data-detail="' + p.id + '" role="button" tabindex="0" aria-label="View details for ' + p.name + '">' +
-            '<img src="' + p.image + '" alt="' + p.name + ' - ' + p.category + '" class="product-img" loading="lazy">' +
+          '<div class="product-img-wrap' + (isRealPhoto(p.image) ? " product-img-wrap-photo" : "") +
+            '" data-detail="' + p.id + '" role="button" tabindex="0" aria-label="View details for ' + p.name + '">' +
+            '<img src="' + p.image + '" alt="' + p.name + ' - ' + p.category + '" class="product-img' +
+              (isRealPhoto(p.image) ? " product-img-photo" : "") + '" loading="lazy">' +
             stockBadge +
           "</div>" +
           '<div class="product-body">' +

@@ -620,6 +620,25 @@ button:focus-visible,
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.2));
 }
 
+/* Real product photography (jpg/png) is a full rectangular shot, not an
+   icon-on-transparent-background — fill the tile edge-to-edge instead of
+   floating/contain, and skip the drop-shadow + tilt (looks odd on a photo). */
+.product-img-photo {
+  object-fit: cover;
+  filter: none;
+}
+
+.product-img-wrap-photo,
+.product-img-wrap:has(.product-img-photo) {
+  padding: 0;
+  background: var(--amigo-gray-light);
+}
+
+.product-card:hover .product-img-photo {
+  transform: scale(1.08);
+  filter: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .product-img,
   .product-img-wrap::before {

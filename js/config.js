@@ -53,7 +53,7 @@ const AMIGO_CONFIG = {
    *     Template A - "order_to_business"  (sent to YOU)
    *       Recipient: your business email
    *       Variables: {{order_id}} {{customer_name}} {{customer_phone}}
-   *                  {{customer_email}} {{customer_address}} {{notes}}
+   *                  {{customer_email}} {{customer_address}}
    *                  {{order_items}} {{order_total}} {{order_date}}
    *
    *     Template B - "order_to_customer" (sent to the CUSTOMER, has the QR)

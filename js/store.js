@@ -561,7 +561,6 @@ function sendOrderEmails(order, qrDataUrl) {
     customer_phone: order.phone,
     customer_email: order.email,
     customer_address: order.address,
-    notes: order.notes || "-",
     order_items: order.itemsText,
     order_total: order.totalText,
     to_email: AMIGO_CONFIG.orderEmail
@@ -606,8 +605,7 @@ function buildMailtoLink(order) {
     "Name: " + order.name + "\n" +
     "Phone: " + order.phone + "\n" +
     "Email: " + order.email + "\n" +
-    "Address: " + order.address + "\n" +
-    "Notes: " + (order.notes || "-") + "\n\n" +
+    "Address: " + order.address + "\n\n" +
     "ITEMS\n" + order.itemsText + "\n\n" +
     "TOTAL: " + order.totalText + "\n";
 
@@ -656,7 +654,6 @@ function placeOrder(event) {
     phone: document.getElementById("custPhone").value.trim(),
     email: document.getElementById("custEmail").value.trim(),
     address: document.getElementById("custAddress").value.trim(),
-    notes: document.getElementById("custNotes").value.trim(),
     itemsText: buildItemsText(),
     totalText: AMIGO_CONFIG.pricesConfigured ? formatMoney(total) : "To be confirmed",
     total: total

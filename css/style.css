@@ -1102,6 +1102,7 @@ button:focus-visible,
   font-size: 0.95rem;
   color: var(--amigo-black);
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .qty-input::-webkit-outer-spin-button,
@@ -1340,20 +1341,43 @@ button:focus-visible,
 }
 
 /* ============ CHECKOUT MODAL ============ */
+#checkoutModal {
+  padding: 0 !important;
+}
+
+/* Height is expressed in % of .modal (which Bootstrap sizes to the real
+   fixed-position viewport). Using vh here breaks on Android/iOS because
+   100vh = viewport with the URL bar HIDDEN, so the footer lands off-screen. */
 #checkoutModal .modal-dialog {
-  max-height: calc(100vh - 40px);
+  max-width: 800px;
   margin: 20px auto;
+  height: calc(100% - 40px);
+  /* neutralize .modal-dialog-centered's min-height so it can't outgrow the clamp */
+  min-height: auto;
 }
 
 .amigo-modal {
   border: none;
   border-radius: var(--amigo-radius);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  /* Remove max-height from here - let body control scroll */
+  position: relative;
+}
+
+/* Only the checkout modal is a fixed-height, internally-scrolling shell */
+#checkoutModal .amigo-modal {
   height: 100%;
+  max-height: 100%;
+  overflow: hidden; /* enforce the height clamp on this box */
+}
+
+/* Form must also be flex container */
+#checkoutForm {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0; /* allow this flex item to shrink below its content size */
+  overflow: hidden;
 }
 
 .amigo-modal .modal-header {
@@ -1361,18 +1385,19 @@ button:focus-visible,
   background: var(--amigo-black);
   color: #fff;
   padding: 16px 20px;
+  z-index: 2;
 }
 
 .amigo-modal .modal-body {
+  flex: 1 1 auto;
+  min-height: 0; /* CRITICAL: without this, flexbox won't shrink the body and scroll never triggers */
   overflow-y: auto;
   overflow-x: hidden;
-  flex: 1 1 auto;
   padding: 20px;
-  /* CRITICAL: min-height 0 allows flex item to shrink below content size */
-  min-height: 0;
   /* Hide scrollbar but keep scroll functionality */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
+  -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
 }
 
 .amigo-modal .modal-body::-webkit-scrollbar {
@@ -1381,83 +1406,95 @@ button:focus-visible,
 
 .amigo-modal .modal-footer {
   flex-shrink: 0;
-  border-top: 1px solid #eee;
-  padding: 16px 20px;
+  border-top: 2px solid #eee;
+  padding: 14px 20px;
+  /* keep clear of Android/iOS gesture bars */
+  padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: row;
   gap: 10px;
   justify-content: flex-end;
   background: #fff;
   flex-wrap: nowrap;
+  z-index: 2;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .amigo-modal .modal-footer .btn {
   white-space: nowrap;
   flex-shrink: 0;
+  min-width: 110px;
 }
 
 /* Tablet: wider modal */
 @media (max-width: 991.98px) {
   #checkoutModal .modal-dialog {
     max-width: 95%;
-    max-height: calc(100vh - 30px);
     margin: 15px auto;
+    height: calc(100% - 30px);
   }
-  .amigo-modal .modal-body { padding: 16px; }
-  .amigo-modal .modal-footer { padding: 14px 16px; }
+  .amigo-modal .modal-body {
+    padding: 16px;
+  }
+  .amigo-modal .modal-footer {
+    padding: 12px 16px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  }
   .amigo-modal .modal-header { padding: 14px 16px; }
 }
 
-/* Mobile: full width */
+/* Mobile + Extra small: true full-screen sheet, no rounded corners */
 @media (max-width: 767.98px) {
   #checkoutModal .modal-dialog {
     max-width: 100%;
-    max-height: calc(100vh - 10px);
-    margin: 5px;
-  }
-  .amigo-modal {
-    border-radius: 12px;
-  }
-  .amigo-modal .modal-body { padding: 14px; }
-  .amigo-modal .modal-footer { 
-    padding: 12px 14px;
-    gap: 8px;
-  }
-  .amigo-modal .modal-header { padding: 14px; }
-  .amigo-modal .modal-title { font-size: 1rem; }
-  .amigo-modal .modal-footer .btn {
-    font-size: 0.9rem;
-    padding: 8px 14px;
-  }
-}
-
-/* Extra small: fullscreen */
-@media (max-width: 575.98px) {
-  #checkoutModal .modal-dialog {
-    max-width: 100%;
-    max-height: 100vh;
+    width: 100%;
     margin: 0;
+    height: 100%;
+    /* override .modal-dialog-centered so the sheet fills the screen */
+    align-items: stretch;
   }
-  .amigo-modal {
-    height: 100vh;
+  #checkoutModal .amigo-modal {
     border-radius: 0;
   }
-  .amigo-modal .modal-body { padding: 12px; }
-  .amigo-modal .modal-header { padding: 12px; }
-  .amigo-modal .modal-footer { 
+  .amigo-modal .modal-body {
+    padding: 14px;
+  }
+  .amigo-modal .modal-footer {
+    padding: 12px 14px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    gap: 8px;
+  }
+  .amigo-modal .modal-header { padding: 12px 14px; }
+  .amigo-modal .modal-title { font-size: 0.95rem; }
+  .amigo-modal .modal-footer .btn {
+    font-size: 0.875rem;
     padding: 10px 12px;
-    gap: 6px;
+    min-width: 0; /* let buttons shrink instead of overflowing */
+  }
+  /* Share the row: Back stays compact, Place Order takes the rest */
+  .amigo-modal .modal-footer .btn-outline-dark-amigo { flex: 1 1 0; }
+  .amigo-modal .modal-footer .btn-checkout { flex: 2 1 0; }
+}
+
+@media (max-width: 575.98px) {
+  .amigo-modal .modal-body {
+    padding: 12px;
+  }
+  .amigo-modal .modal-header {
+    padding: 10px 12px;
+  }
+  .amigo-modal .modal-title {
+    font-size: 0.9rem;
+  }
+  .amigo-modal .modal-footer {
+    padding: 10px 12px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    gap: 8px;
   }
   .amigo-modal .modal-footer .btn {
     font-size: 0.85rem;
-    padding: 7px 12px;
+    padding: 11px 8px;
   }
-}
-
-.amigo-modal .modal-header {
-  background: var(--amigo-black);
-  color: #fff;
-  flex-shrink: 0;
 }
 
 .amigo-modal .modal-header .modal-title i {
@@ -1545,30 +1582,9 @@ button:focus-visible,
   color: var(--amigo-red);
 }
 
-.amigo-modal .modal-footer {
-  flex-shrink: 0;
-  border-top: 1px solid #eee;
-  padding: 16px 20px;
-  display: flex;
-  gap: 10px;
-  justify-content: flex-end;
-  align-items: center;
-}
-
 @media (max-width: 575.98px) {
   .checkout-note {
     font-size: 0.76rem;
-  }
-
-  /* Keep buttons on one line but make them smaller */
-  .amigo-modal .modal-footer {
-    padding: 10px 12px;
-    gap: 8px;
-  }
-
-  .amigo-modal .modal-footer .btn {
-    font-size: 0.85rem;
-    padding: 10px 16px;
   }
 }
 

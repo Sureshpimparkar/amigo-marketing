@@ -237,7 +237,7 @@ function renderProducts() {
       '<i class="bi bi-whatsapp"></i> Enquire on WhatsApp</button>';
 
     return (
-      '<div class="col-sm-6 col-lg-3">' +
+      '<div class="col-6 col-md-4 col-lg-3">' +
         '<div class="product-card' + (outOfStock ? " product-card-disabled" : "") + '">' +
           '<div class="product-img-wrap' + (isRealPhoto(p.image) ? " product-img-wrap-photo" : "") +
             '" data-detail="' + p.id + '" role="button" tabindex="0" aria-label="View details for ' + p.name + '">' +

@@ -620,23 +620,23 @@ button:focus-visible,
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.2));
 }
 
-/* Real product photography (jpg/png) is a full rectangular shot, not an
-   icon-on-transparent-background — fill the tile edge-to-edge instead of
-   floating/contain, and skip the drop-shadow + tilt (looks odd on a photo). */
+/* Real product photos are studio shots already on a plain WHITE backdrop.
+   The tile background must match that white exactly - any different shade
+   creates a visible "box within a box" seam around the photo. A thin inset
+   border replaces the color-contrast so the tile is still visually framed. */
 .product-img-photo {
-  object-fit: cover;
-  filter: none;
+  object-fit: contain;
 }
 
 .product-img-wrap-photo,
 .product-img-wrap:has(.product-img-photo) {
-  padding: 0;
-  background: var(--amigo-gray-light);
+  padding: 14px;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 1px #eef0f2;
 }
 
 .product-card:hover .product-img-photo {
   transform: scale(1.08);
-  filter: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -672,6 +672,37 @@ button:focus-visible,
   margin-bottom: 14px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+/* Tighter card content on small/mobile screens so longer product names
+   (e.g. "800 GSM Micro Fiber Cloth 50 X 80") never overflow or force
+   oversized buttons in the 2-per-row mobile grid. */
+@media (max-width: 767.98px) {
+  .product-body {
+    padding: 14px;
+  }
+  .product-title {
+    font-size: 0.92rem;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .product-desc {
+    font-size: 0.78rem;
+    margin-bottom: 8px;
+  }
+  .product-price {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .product-title {
+    font-size: 0.86rem;
+  }
+  .product-desc {
+    font-size: 0.74rem;
+  }
 }
 
 
@@ -1205,6 +1236,22 @@ button:focus-visible,
   font-size: 0.95rem;
 }
 
+@media (max-width: 767.98px) {
+  .qty-stepper {
+    margin-bottom: 10px;
+  }
+  .qty-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.95rem;
+  }
+  .qty-input {
+    width: 34px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+}
+
 /* ============ PRODUCT ACTION BUTTONS ============ */
 .product-actions {
   display: grid;
@@ -1253,6 +1300,23 @@ button:focus-visible,
   border-radius: 30px;
   border: none;
   cursor: not-allowed;
+}
+
+@media (max-width: 767.98px) {
+  .product-actions {
+    gap: 6px;
+  }
+  .btn-buy-now,
+  .btn-add-cart,
+  .btn-outofstock,
+  .btn-enquire-alt {
+    font-size: 0.78rem;
+    padding: 8px 10px;
+  }
+  .btn-whatsapp-product {
+    font-size: 0.78rem;
+    padding: 7px 10px;
+  }
 }
 
 .btn-enquire-alt {
